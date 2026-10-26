@@ -9,22 +9,21 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="THÔNG TIN ĐÃ ĐĂNG KÝ"
-        android:textSize="22sp"
+        android:text="CHI TIẾT THÔNG TIN TÀI KHOẢN"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#2E7D32"
         android:gravity="center"
         android:layout_marginBottom="24dp" />
 
     <TextView
-        android:id="@+id/tvResult"
+        android:id="@+id/tvUserInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:padding="16dp"
         android:textSize="18sp"
-        android:lineSpacingExtra="6dp"
-        android:text="Đang tải thông tin..."
+        android:lineSpacingExtra="8dp"
         android:elevation="2dp"
         android:layout_marginBottom="24dp" />
 

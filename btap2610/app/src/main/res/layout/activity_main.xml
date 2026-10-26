@@ -1,164 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
     android:background="#FAFAFA">
 
-    <!-- Tiêu đề -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ĐĂNG KÝ THÔNG TIN"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#1976D2"
-        android:gravity="center"
-        android:layout_marginBottom="20dp" />
-
-    <!-- Phần nội dung form chiếm phần lớn màn hình -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <!-- Input Họ tên -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ĐĂNG KÝ TÀI KHOẢN"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1976D2"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Họ tên -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Họ và tên:"
+            android:text="Họ và tên (*):"
             android:textStyle="bold" />
-
         <EditText
-            android:id="@+id/edtFullName"
+            android:id="@+id/edtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nhập họ và tên..."
+            android:hint="Tối thiểu 3 ký tự"
             android:inputType="textPersonName"
-            android:imeOptions="actionNext"
             android:layout_marginBottom="12dp" />
 
-        <!-- Input Email / SĐT -->
+        <!-- Email -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email / Số điện thoại:"
+            android:text="Email (*):"
             android:textStyle="bold" />
-
         <EditText
-            android:id="@+id/edtContact"
+            android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nhập email hoặc số điện thoại..."
+            android:hint="Ví dụ: abc@gmail.com hoặc user@ute.vn"
             android:inputType="textEmailAddress"
-            android:imeOptions="actionDone"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="12dp" />
 
-        <!-- RadioButton Giới tính -->
+        <!-- Số điện thoại -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Giới tính:"
+            android:text="Số điện thoại (*):"
             android:textStyle="bold" />
-
-        <RadioGroup
-            android:id="@+id/rgGender"
+        <EditText
+            android:id="@+id/edtPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:hint="10 số (đầu 03, 05, 07, 08, 09)"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:layout_marginBottom="12dp" />
 
-            <RadioButton
-                android:id="@+id/rbMale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nam"
-                android:layout_marginEnd="24dp" />
-
-            <RadioButton
-                android:id="@+id/rbFemale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nữ"
-                android:layout_marginEnd="24dp" />
-
-            <RadioButton
-                android:id="@+id/rbOther"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Khác" />
-        </RadioGroup>
-
-        <!-- CheckBox Mạng xã hội -->
+        <!-- Mật khẩu -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mạng xã hội đang sử dụng:"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-
-        <CheckBox
-            android:id="@+id/cbFacebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Facebook" />
-
-        <CheckBox
-            android:id="@+id/cbInstagram"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Instagram" />
-
-        <CheckBox
-            android:id="@+id/cbTiktok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TikTok"
-            android:layout_marginBottom="20dp" />
-
-        <!-- Button Đăng ký -->
-        <Button
-            android:id="@+id/btnRegister"
+            android:text="Mật khẩu (*):"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ĐĂNG KÝ"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:backgroundTint="#1976D2"
-            android:padding="12dp" />
+            android:hint="Tối thiểu 6 ký tự"
+            android:inputType="textPassword"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Hai nút Huỷ và Đăng ký -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HUỶ"
+                android:backgroundTint="#757575"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ĐĂNG KÝ"
+                android:backgroundTint="#1976D2"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
 
     </LinearLayout>
-
-    <!-- Phần thông tin sinh viên phía dưới -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#E3F2FD"
-        android:padding="12dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="THÔNG TIN SINH VIÊN THỰC HIỆN"
-            android:textStyle="bold"
-            android:textColor="#0D47A1"
-            android:gravity="center"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Họ và tên: PHAM TRAN THANH VINH"
-            android:gravity="center" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mã SV: [Nhập MSSV của bạn] - Lớp: [Nhập Lớp]"
-            android:gravity="center" />
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
